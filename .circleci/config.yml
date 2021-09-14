@@ -26,8 +26,10 @@ jobs:
           name: Test
           command: mvn test
       - aws-s3/sync:
-           from: bucket
-           to: 's3://jiraiya106-terraform-state/circleci'
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: bucket
+          to: 's3://jiraiya106-terraform-state/circleci'
 
 workflows:
   # Below is the definition of your workflow.
