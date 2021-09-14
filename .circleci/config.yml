@@ -26,8 +26,8 @@ jobs:
              --cache-control "max-age=86400"
           overwrite: true
       - store_artifacts:
-          path: /tmp/art-1
-          destination: artifact-file
+          path: /home/circleci/project/target/store-webapp.ja
+          #destination: artifact-file
       - store_artifacts:
           path: /tmp/artifacts
   
