@@ -2,8 +2,8 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-orbs:
-   aws-s3: circleci/aws-s3@x.y.z
+# orbs:
+#    aws-s3: circleci/aws-s3@x.y.z
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
