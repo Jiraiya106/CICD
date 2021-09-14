@@ -4,35 +4,35 @@ version: 2.1
 #   aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
-  build:  
+  build-and-test:  
     docker:
       - image: cimg/openjdk:11.0
     steps:
       - checkout
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package | mvn package
-      # - aws-s3/sync:
-      #     aws-access-key-id: AWS_ACCESS_KEY_ID
-      #     aws-region: AWS_REGION
-      #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-      #     from: bucket
-      #     to: 's3://jiraiya106-terraform-state'
+          command: mvn -B -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn test
+      - aws-s3/sync:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: bucket
+          to: 's3://jiraiya106-terraform-state'
+          arguments: | # Optional arguments
+             --acl public-read \
+             --cache-control "max-age=86400"
+          overwrite: true
       - store_artifacts:
           path: /tmp/art-1
           destination: artifact-file
       - store_artifacts:
           path: /tmp/artifacts
-  test:
-    docker:
-      - image: cimg/openjdk:11.0
-    steps:
-      - run:
-         name: Test
-         command: mvn test
+  
 
 workflows:
   sample: 
     jobs:
-      - build
-      - test
+      - build-and-test
