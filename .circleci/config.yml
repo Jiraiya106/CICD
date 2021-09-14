@@ -31,6 +31,11 @@ jobs:
       #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
       #     from: bucket
       #     to: 's3://jiraiya106-terraform-state'
+      - store_artifacts:
+          path: /tmp/art-1
+          destination: artifact-file
+      - store_artifacts:
+          path: /tmp/artifacts
 
 workflows:
   # Below is the definition of your workflow.
