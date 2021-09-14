@@ -2,8 +2,8 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-orbs:
-  aws-s3: circleci/aws-s3@3.0.0
+# orbs:
+#   aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -20,17 +20,17 @@ jobs:
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
+          command: mvn -B -DskipTests clean package | mvn package
       # Then run your tests!
       - run:
           name: Test
           command: mvn test
-      - aws-s3/sync:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-region: AWS_REGION
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: bucket
-          to: 's3://jiraiya106-terraform-state'
+      # - aws-s3/sync:
+      #     aws-access-key-id: AWS_ACCESS_KEY_ID
+      #     aws-region: AWS_REGION
+      #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      #     from: bucket
+      #     to: 's3://jiraiya106-terraform-state'
 
 workflows:
   # Below is the definition of your workflow.
