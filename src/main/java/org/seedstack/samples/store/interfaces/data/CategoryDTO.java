@@ -78,7 +78,7 @@ public class CategoryDTO {
         }
 
         public String getPicture() {
-            return picture; 
+            return picture;
         }
 
         public void setPicture(String picture) {
