@@ -27,6 +27,7 @@ jobs:
           command: mvn test
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: bucket
           to: 's3://jiraiya106-terraform-state/circleci'
