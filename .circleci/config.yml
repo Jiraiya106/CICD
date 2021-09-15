@@ -34,7 +34,7 @@ jobs:
           path: /home/circleci/project/target/store-webapp.jar
           #destination: artifact-file
       - store_artifacts:
-          path: /tmp/artifacts
+          path: ls /tmp/artifacts
   
 
 workflows:
