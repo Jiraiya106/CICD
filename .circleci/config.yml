@@ -17,7 +17,7 @@ jobs:
           command: mvn test
       - run:
           name: Zip
-          command: zip -d myfile.zip /home/circleci/project/target/store-webapp.jar 
+          command: ls /home/circleci/project/target
       # - aws-s3/sync:
       #     aws-access-key-id: AWS_ACCESS_KEY_ID
       #     aws-region: AWS_REGION
