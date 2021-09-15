@@ -11,10 +11,13 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package | zip -d myfile.zip /home/circleci/project/target/store-webapp.jar
+          command: mvn -B -DskipTests clean package
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: Zip
+          command: zip -d myfile.zip /home/circleci/project/target/store-webapp.jar 
       # - aws-s3/sync:
       #     aws-access-key-id: AWS_ACCESS_KEY_ID
       #     aws-region: AWS_REGION
