@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Zip
           command: |
-            zip myfile.zip /home/circleci/project/target/store-webapp.jar
+            zip /home/circleci/myfile.zip /home/circleci/project/target/store-webapp.jar
             ls /home/circleci/
       # - aws-s3/sync:
       #     aws-access-key-id: AWS_ACCESS_KEY_ID
