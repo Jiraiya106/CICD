@@ -19,7 +19,7 @@ jobs:
           name: Zip
           command: |
             zip /home/circleci/myfile.zip /home/circleci/project/target/store-webapp.jar
-            ls /home/circleci/
+            ls /tmp/artifacts
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
@@ -34,7 +34,7 @@ jobs:
           path: /home/circleci/project/target/store-webapp.jar
           #destination: artifact-file
       - store_artifacts:
-          path: ls /tmp/artifacts
+          path: /tmp/artifacts
   
 
 workflows:
