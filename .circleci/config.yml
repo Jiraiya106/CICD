@@ -25,7 +25,7 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: /tmp/artifacts
+          from: /home/circleci/project/arhiv
           to: 's3://jiraiya106-terraform-state/'
           # arguments: | # Optional arguments
           #    --acl public-read \
