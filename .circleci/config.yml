@@ -20,7 +20,7 @@ jobs:
           command: |
             mkdir -p /home/circleci/project/arhiv
             zip arhiv/myfile.zip /home/circleci/project/target/store-webapp.jar
-            ls /home/circleci/project/
+            ls /home/circleci/project/arhiv
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
