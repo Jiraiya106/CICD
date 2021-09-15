@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Zip
           command: |
-            zip /tmp/artifacts/myfile.zip /home/circleci/project/target/store-webapp.jar
+            sudo zip /tmp/artifacts/myfile.zip /home/circleci/project/target/store-webapp.jar
             ls /tmp/artifacts
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
