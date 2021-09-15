@@ -1,7 +1,7 @@
 version: 2.1
 
-# orbs:
-#   aws-s3: circleci/aws-s3@3.0.0
+orbs:
+  aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
   build-and-test:  
@@ -20,13 +20,13 @@ jobs:
           command: |
             zip /home/circleci/myfile.zip /home/circleci/project/target/store-webapp.jar
             ls /home/circleci/
-      # - aws-s3/sync:
-      #     aws-access-key-id: AWS_ACCESS_KEY_ID
-      #     aws-region: AWS_REGION
-      #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-      #     from: bucket
-      #     to: 's3://jiraiya106-terraform-state/'
-      #     # arguments: | # Optional arguments
+      - aws-s3/sync:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: /home/circleci/myfile.zip
+          to: 's3://jiraiya106-terraform-state/'
+          # arguments: | # Optional arguments
           #    --acl public-read \
           #    --cache-control "max-age=86400"
           # overwrite: true
