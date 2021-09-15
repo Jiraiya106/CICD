@@ -18,6 +18,7 @@ jobs:
       - run:
           name: Zip
           command: |
+            mkdir -r /home/circleci/project/arhiv
             zip arhiv/myfile.zip /home/circleci/project/target/store-webapp.jar
             ls /home/circleci/project/
       - aws-s3/sync:
