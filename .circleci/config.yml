@@ -25,7 +25,7 @@ jobs:
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: /home/circleci/project/arhiv
-          to: 's3://jiraiya106-terraform-state-itra/'
+          to: 's3://jiraiya106-terraform-state/'
 
 workflows:
   sample: 
