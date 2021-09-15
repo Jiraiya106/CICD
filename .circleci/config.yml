@@ -24,10 +24,10 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: bucket
           to: 's3://jiraiya106-terraform-state'
-          arguments: | # Optional arguments
-             --acl public-read \
-             --cache-control "max-age=86400"
-          overwrite: true
+          # arguments: | # Optional arguments
+          #    --acl public-read \
+          #    --cache-control "max-age=86400"
+          # overwrite: true
       - store_artifacts:
           path: /home/circleci/project/target/store-webapp.jar
           #destination: artifact-file
