@@ -21,11 +21,11 @@ jobs:
             mkdir -p /home/circleci/project/arhiv
             zip arhiv/myfile.zip /home/circleci/project/target/store-webapp.jar
       - aws-s3/sync:
-          aws-access-key-id: AWS_ACCESS_KEY_ID1
+          aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY1
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: /home/circleci/project/arhiv
-          to: 's3://jiraiya106-terraform-state-itra/'
+          to: 's3://jiraiya106-terraform-state/'
 
 workflows:
   sample: 
