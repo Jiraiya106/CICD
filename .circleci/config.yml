@@ -47,4 +47,4 @@ workflows:
           deployment-group: Deploy-group # The name of a new deployment group for the specified application.
           service-role-arn: arn:aws:iam::992002333423:role/codedeploy # The service role for a deployment group.
           bundle-bucket: s3://jiraiya106-terraform-state # The s3 bucket where an application revision will be stored.
-          #bundle-key: <my-S3-bucket-key>
+          bundle-key: arn:aws:kms:eu-west-2:992002333423:alias/aws/s3
