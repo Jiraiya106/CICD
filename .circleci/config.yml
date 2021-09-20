@@ -18,7 +18,11 @@ jobs:
       - run:
           name: Zip
           command: |
-            ls 
+            mkdir project
+            cp appspec.yml ./project/appspec.yml
+            cp -R scripts ./project/scripts
+            cp /home/circleci/project/target/store-webapp.jar ./project/store-webapp.jar
+            ls project/
             mkdir -p /home/circleci/project/arhiv
             zip -j arhiv/myfile.zip /home/circleci/project/target/store-webapp.jar
       - aws-s3/sync:
