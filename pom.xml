@@ -14,9 +14,6 @@
     <groupId>org.seedstack.samples</groupId>
     <artifactId>store-webapp-sample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <pagckaging>jar</pagckaging>
-    <version>1.0</version>
-	<name>projectMy</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
