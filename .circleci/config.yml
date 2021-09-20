@@ -31,6 +31,14 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: /home/circleci/project/arhiv
           to: 's3://jiraiya106-terraform-state/'
+      - aws-code-deploy/deploy:
+          application-name: dev # The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+          deployment-group: Deploy-group # The name of a new deployment group for the specified application.
+          service-role-arn: arn:aws:iam::992002333423:role/codedeploy # The service role for a deployment group.
+          bundle-bucket: s3://jiraiya106-terraform-state # The s3 bucket where an application revision will be stored.
+          #bundle-key: <my-S3-bucket-key>
+  
+
 
 workflows:
   sample: 
