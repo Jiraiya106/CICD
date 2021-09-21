@@ -26,7 +26,7 @@ jobs:
             cp /home/circleci/project/target/store-webapp-capsule.jar ./project/store-webapp-capsule.jar
             ls /home/circleci/project/target/
             mkdir -p /home/circleci/project/arhiv
-            zip -jr arhiv/myfile.zip ./project/
+            zip -jrq arhiv/myfile.zip ./project/
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
