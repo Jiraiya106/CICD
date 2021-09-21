@@ -23,7 +23,7 @@ jobs:
             cp appspec.yml ./project/appspec.yml
             cp -R scripts ./project/scripts
             cp /home/circleci/project/target/store-webapp.jar ./project/store-webapp.jar
-            ls project/
+            ls /home/circleci/project/target/
             mkdir -p /home/circleci/project/arhiv
             zip -jr arhiv/myfile.zip ./project/
       - aws-s3/sync:
