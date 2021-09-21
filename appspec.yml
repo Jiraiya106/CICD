@@ -3,22 +3,26 @@ os: linux
 files:
    - source: /
      destination: /var/www/html
-permissions:
-   - object: /var/www/html
-     pattern: "**"
-     owner: apache
-     group: apache
-     mode: 755
-     type:
-       - file
+# permissions:
+#    - object: /var/www/html
+#      pattern: "**"
+#      owner: apache
+#      group: apache
+#      mode: 755
+#      type:
+#        - file
 hooks:
    BeforeInstall:
     - location: installapache.sh
       runas: root
+      timeout: 60
     - location: startapache.sh
       runas: root
+      timeout: 60
    AfterInstall:
     - location: envscript.sh
       runas: root
+      timeout: 60
     - location: restartapache.sh
       runas: root
+      timeout: 60
