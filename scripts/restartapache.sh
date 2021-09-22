@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl restart apache2
+ll

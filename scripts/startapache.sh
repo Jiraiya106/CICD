@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl start apache2
+uname -a
