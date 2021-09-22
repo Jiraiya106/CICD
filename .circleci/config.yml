@@ -25,6 +25,7 @@ jobs:
             cp /home/circleci/project/target/store-webapp.jar ./project/store-webapp.jar
             cp /home/circleci/project/target/store-webapp-capsule.jar ./project/store-webapp-capsule.jar
             ls project
+            pwd
             mkdir -p /home/circleci/project/arhiv
             zip -r arhiv/myfile.zip appspec.yml scripts /home/circleci/project/target/store-webapp.jar /home/circleci/project/target/store-webapp-capsule.jar
       - aws-s3/sync:
