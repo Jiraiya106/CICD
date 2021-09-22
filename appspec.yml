@@ -13,16 +13,16 @@ files:
 #        - file
 hooks:
    BeforeInstall:
-    - location: installapache.sh
+    - location: scripts/installapache.sh
       runas: root
       timeout: 60
-    - location: startapache.sh
+    - location: scripts/startapache.sh
       runas: root
       timeout: 60
    AfterInstall:
-    - location: envscript.sh
+    - location: scripts/envscript.sh
       runas: root
       timeout: 60
-    - location: restartapache.sh
+    - location: scripts/restartapache.sh
       runas: root
       timeout: 60
