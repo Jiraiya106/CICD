@@ -21,9 +21,9 @@ hooks:
       runas: root
       timeout: 60
    AfterInstall:
-    - location: scripts/restartapache.sh
+    - location: scripts/envscript.sh
       runas: root
       timeout: 60
-    - location: scripts/envscript.sh
+    - location: scripts/restartapache.sh
       runas: root
       timeout: 60

@@ -1,2 +1,2 @@
 #!/bin/bash
-uname -a
+service httpd start

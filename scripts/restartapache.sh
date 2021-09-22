@@ -1,2 +1,2 @@
 #!/bin/bash
-ls deployment-root
+service httpd restart 
