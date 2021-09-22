@@ -22,12 +22,12 @@ jobs:
             mkdir project
             cp appspec.yml ./project/appspec.yml
             cp -R scripts ./project/scripts
-            cp /home/circleci/project/target/store-webapp.jar ./project/store-webapp.jar
-            cp /home/circleci/project/target/store-webapp-capsule.jar ./project/store-webapp-capsule.jar
+            cp /home/circleci/project/target/store-webapp.jar /home/circleci/project/store-webapp.jar
+            cp /home/circleci/project/target/store-webapp-capsule.jar /home/circleci/project/store-webapp-capsule.jar
             ls project
             pwd
             mkdir -p /home/circleci/project/arhiv
-            zip -r arhiv/myfile.zip appspec.yml scripts /home/circleci/project/target/store-webapp.jar /home/circleci/project/target/store-webapp-capsule.jar
+            zip -r arhiv/myfile.zip appspec.yml scripts store-webapp.jar store-webapp-capsule.jar
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
