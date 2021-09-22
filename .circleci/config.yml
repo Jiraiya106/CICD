@@ -24,7 +24,7 @@ jobs:
             cp -R scripts ./project/scripts
             cp /home/circleci/project/target/store-webapp.jar ./project/store-webapp.jar
             cp /home/circleci/project/target/store-webapp-capsule.jar ./project/store-webapp-capsule.jar
-            ls /home/circleci/project/target/
+            ls project
             mkdir -p /home/circleci/project/arhiv
             cd project
             zip -r arhiv/myfile.zip *
