@@ -1,6 +1,6 @@
 #!/bin/bash
 PARAMATER="APP_ENV"
-REGION="eu-west-1"
+REGION="eu-west-2"
 WEB_DIR="/var/www/html"
 
 
