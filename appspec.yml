@@ -20,10 +20,16 @@ hooks:
     - location: scripts/startapache.sh
       runas: root
       timeout: 60
+    - location: scripts/installjava8.sh
+      runas: root
+      timeout: 60      
    AfterInstall:
     - location: scripts/envscript.sh
       runas: root
       timeout: 60
     - location: scripts/restartapache.sh
+      runas: root
+      timeout: 60
+    - location: scripts/startapp.sh
       runas: root
       timeout: 60
