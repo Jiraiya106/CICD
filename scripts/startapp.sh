@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo java8 -jar /home/ec2-user/node/target/store-webapp-capsule.jar
+screen -dmS sudo java8 -jar /home/ec2-user/node/target/store-webapp-capsule.jar
