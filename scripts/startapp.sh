@@ -1,2 +1,2 @@
 #!/bin/bash
-java8 -jar $PWD/target/store-webapp-capsule.jar
+java8 -jar /home/ec2-user/node/target/store-webapp-capsule.jar
