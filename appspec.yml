@@ -32,4 +32,3 @@ hooks:
       timeout: 60
     - location: scripts/startapp.sh
       runas: root
-      timeout: 60
