@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   aws-s3: circleci/aws-s3@3.0.0
-  aws-code-deploy: circleci/aws-code-deploy@2.0.0
 
 jobs:
   build-and-test:  
@@ -22,8 +21,6 @@ jobs:
             mkdir project
             cp appspec.yml ./project/appspec.yml
             cp -R scripts ./project/scripts
-            ls project
-            pwd
             mkdir -p /home/circleci/project/arhiv
             zip -r arhiv/myfile.zip appspec.yml scripts target
       - aws-s3/sync:
@@ -40,11 +37,3 @@ workflows:
   sample: 
     jobs:
       - build-and-test
-  # deploy_application:
-  #   jobs:
-  #     - aws-code-deploy/deploy:
-  #         application-name: dev # The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
-  #         deployment-group: Deploy-group # The name of a new deployment group for the specified application.
-  #         service-role-arn: arn:aws:iam::992002333423:role/codedeploy # The service role for a deployment group.
-  #         bundle-bucket: s3://jiraiya106-terraform-state # The s3 bucket where an application revision will be stored.
-  #         bundle-key: arn:aws:kms:eu-west-2:992002333423:alias/aws/s3
