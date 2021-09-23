@@ -1,3 +1,3 @@
 #!/bin/bash
 yum update
-yum install openjdk-8-jdk
+yum install -y openjdk-8-jdk
